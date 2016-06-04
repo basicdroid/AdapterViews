@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.training.android.adapterviews.R;
+import com.training.android.adapterviews.adapters.MoviesAdapter;
 import com.training.android.adapterviews.controllers.MoviesController;
 
 /**
@@ -42,6 +43,10 @@ public class ListViewFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         // Creates a new instance of adapter
+        MoviesAdapter adapter = new MoviesAdapter(getContext(), R.layout.list_item,
+                mController.getMovies());
 
+        // Set the adapter to the adapter view
+        mListView.setAdapter(adapter);
     }
 }
