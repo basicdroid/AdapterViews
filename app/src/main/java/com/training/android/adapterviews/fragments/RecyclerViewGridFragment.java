@@ -10,13 +10,24 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.training.android.adapterviews.R;
+import com.training.android.adapterviews.adapters.MoviesRecyclerAdapter;
+import com.training.android.adapterviews.controllers.MoviesController;
 
 public class RecyclerViewGridFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
 
+    private MoviesController mController;
+
     public static RecyclerViewGridFragment newInstance() {
         return new RecyclerViewGridFragment();
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        mController = new MoviesController();
     }
 
     @Override
@@ -34,8 +45,11 @@ public class RecyclerViewGridFragment extends Fragment {
         mRecyclerView.setLayoutManager(glm);
         mRecyclerView.setHasFixedSize(true);
 
-        // TODO: Create the adapter
+        // Create the adapter
+        MoviesRecyclerAdapter adapter = new MoviesRecyclerAdapter(getContext(),
+                R.layout.recycler_grid_item, mController.getMovies());
 
-        // TODO: Set the adapter to the adapter view
+        // Set the adapter to the adapter view
+        mRecyclerView.setAdapter(adapter);
     }
 }
