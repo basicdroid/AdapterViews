@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 
 import com.training.android.adapterviews.R;
+import com.training.android.adapterviews.adapters.MoviesAdapter;
 import com.training.android.adapterviews.controllers.MoviesController;
 
 public class GridViewFragment extends Fragment {
@@ -39,5 +40,10 @@ public class GridViewFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         // Create the adapter
+        MoviesAdapter adapter = new MoviesAdapter(getContext(), R.layout.grid_item,
+                mController.getMovies());
+
+        // Set the adapter to the adapter view
+        mGridView.setAdapter(adapter);
     }
 }

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.training.android.adapterviews.fragments.GridViewFragment;
 import com.training.android.adapterviews.fragments.ListViewFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.action_listview) {
             fragment = ListViewFragment.newInstance();
+        } else if (id == R.id.action_gridview) {
+            fragment = GridViewFragment.newInstance();
         }
 
         if (fragment != null) {
