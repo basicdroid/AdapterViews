@@ -8,6 +8,7 @@ import android.view.MenuItem;
 
 import com.training.android.adapterviews.fragments.GridViewFragment;
 import com.training.android.adapterviews.fragments.ListViewFragment;
+import com.training.android.adapterviews.fragments.RecyclerViewListFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
             fragment = ListViewFragment.newInstance();
         } else if (id == R.id.action_gridview) {
             fragment = GridViewFragment.newInstance();
+        } else if (id == R.id.action_recyclerList) {
+            fragment = RecyclerViewListFragment.newInstance();
         }
 
         if (fragment != null) {

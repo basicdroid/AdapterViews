@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.training.android.adapterviews.R;
+import com.training.android.adapterviews.adapters.MoviesRecyclerAdapter;
 import com.training.android.adapterviews.controllers.MoviesController;
 
 public class RecyclerViewListFragment extends Fragment {
@@ -51,8 +52,11 @@ public class RecyclerViewListFragment extends Fragment {
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(llm);
 
-        // TODO: Create a new intance of the adapter
+        // Create a new intance of the adapter
+        MoviesRecyclerAdapter adapter = new MoviesRecyclerAdapter(getContext(),
+                R.layout.recycler_list_item, mController.getMovies());
 
-        // TODO: Set the adapter to the adapter view
+        // Set the adapter to the adapter view
+        mRecyclerView.setAdapter(adapter);
     }
 }
