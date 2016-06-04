@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Adapter Views</string>
+    <string name="action_listview">ListView</string>
+    <string name="action_gridview">GridView</string>
+    <string name="action_recyclerview_list">RecyclerView - List</string>
+    <string name="action_recyclerview_grid">RecyclerView - Grid</string>
+</resources>
