@@ -1,4 +1,4 @@
-package com.training.android.adapterviews.controller;
+package com.training.android.adapterviews.controllers;
 
 import com.training.android.adapterviews.R;
 import com.training.android.adapterviews.model.Movie;
